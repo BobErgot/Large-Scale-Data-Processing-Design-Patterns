@@ -5,8 +5,8 @@
 hadoop.root=/usr/local/hadoop-3.3.5
 jar.name=mr-design-patterns-1.0.jar
 jar.path=target/${jar.name}
-job.name=mr.design.patterns.summarization.numerical.medianstddevbyhour.MedianStdDevByHour
-local.input=/Users/bob/Desktop/outputs/design-patterns-mapreduce/input/inputComments.xml
+job.name=mr.design.patterns.summarization.counters.CountNumUsersByState
+local.input=/Users/bob/Desktop/outputs/design-patterns-mapreduce/input/inputUsers.xml
 local.output=output
 local.log = log
 max.value = 500
