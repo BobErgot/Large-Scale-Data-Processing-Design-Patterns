@@ -1,13 +1,13 @@
-# Makefile for Hadoop MapReduce Replicated join project.
 
-# Customize these paths for your environment.
-# -----------------------------------------------------------
 hadoop.root=/usr/local/hadoop-3.3.5
 jar.name=mr-design-patterns-1.0.jar
 jar.path=target/${jar.name}
-job.name=mr.design.patterns.summarization.counters.CountNumUsersByState
-local.input=/Users/bob/Desktop/outputs/design-patterns-mapreduce/input/inputUsers.xml
+job.name=mr.design.patterns.filtering.distinct.DistinctUser
+local.input=/Users/bob/Desktop/outputs/design-patterns-mapreduce/input/inputComments.xml
 local.output=output
+local.parameter_1 ?=
+local.parameter_2 ?=
+# DistributedGrep = '<row [^>]*?/>'
 local.log = log
 max.value = 500
 # Pseudo-Cluster Execution
@@ -42,7 +42,7 @@ clean-local-log:
 # Make sure Hadoop  is set up (in /etc/hadoop files) for standalone operation (not pseudo-cluster).
 # https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html#Standalone_Operation
 local: jar clean-local-output
-	${hadoop.root}/bin/hadoop jar ${jar.path} ${job.name} ${local.input} ${local.output} 
+	${hadoop.root}/bin/hadoop jar ${jar.path} ${job.name} ${local.input} ${local.output} ${local.parameter_1} ${local.parameter_2}
 	
 # Start HDFS
 start-hdfs:
