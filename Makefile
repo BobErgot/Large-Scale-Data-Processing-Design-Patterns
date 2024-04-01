@@ -1,12 +1,12 @@
-
 hadoop.root=/usr/local/hadoop-3.3.5
 jar.name=mr-design-patterns-1.0.jar
 jar.path=target/${jar.name}
-job.name=mr.design.patterns.organization.shuffling.Anonymize
+job.name=mr.design.patterns.joins.cartesianproduct.CartesianCommentComparison
 local.input=/Users/bob/Desktop/outputs/design-patterns-mapreduce/input/inputComments.xml
 local.output=output
 local.parameter_1 ?=
 local.parameter_2 ?=
+local.parameter_3 ?=
 # DistributedGrep = '<row [^>]*?/>'
 local.log = log
 max.value = 500
@@ -42,7 +42,7 @@ clean-local-log:
 # Make sure Hadoop  is set up (in /etc/hadoop files) for standalone operation (not pseudo-cluster).
 # https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html#Standalone_Operation
 local: jar clean-local-output
-	${hadoop.root}/bin/hadoop jar ${jar.path} ${job.name} ${local.input} ${local.output} ${local.parameter_1} ${local.parameter_2}
+	${hadoop.root}/bin/hadoop jar ${jar.path} ${job.name} ${local.input} ${local.output} ${local.parameter_1} ${local.parameter_2} ${local.parameter_3}
 	
 # Start HDFS
 start-hdfs:

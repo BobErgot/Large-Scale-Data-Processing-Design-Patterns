@@ -186,8 +186,8 @@ public class QuestionAnswerBuildingDriver extends Configured implements Tool {
       job.setOutputValueClass(NullWritable.class);
       job.setOutputFormatClass(TextOutputFormat.class);
 
-      FileInputFormat.addInputPath(job, new Path(args[0]));
-      TextOutputFormat.setOutputPath(job, new Path(args[1]));
+      FileInputFormat.addInputPath(job, new Path(otherArgs[0]));
+      TextOutputFormat.setOutputPath(job, new Path(otherArgs[1]));
 
       return job.waitForCompletion(true) ? 0 : 2;
     }
