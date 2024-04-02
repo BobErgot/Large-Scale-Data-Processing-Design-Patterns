@@ -1,7 +1,7 @@
 hadoop.root=/usr/local/hadoop-3.3.5
 jar.name=mr-design-patterns-1.0.jar
 jar.path=target/${jar.name}
-job.name=mr.design.patterns.joins.cartesianproduct.CartesianCommentComparison
+job.name=mr.design.patterns.meta.mergedjob.MergedJob
 local.input=/Users/bob/Desktop/outputs/design-patterns-mapreduce/input/inputComments.xml
 local.output=output
 local.parameter_1 ?=
