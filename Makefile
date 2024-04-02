@@ -1,11 +1,11 @@
 hadoop.root=/usr/local/hadoop-3.3.5
 jar.name=mr-design-patterns-1.0.jar
 jar.path=target/${jar.name}
-job.name=mr.design.patterns.meta.mergedjob.MergedJob
-local.input=/Users/bob/Desktop/outputs/design-patterns-mapreduce/input/inputComments.xml
+job.name=mr.design.patterns.inputoutput.generatingdata.RandomDataGeneration
+local.input= 4
 local.output=output
-local.parameter_1 ?=
-local.parameter_2 ?=
+local.parameter_1 ?= 100
+local.parameter_2 ?= /Users/bob/Desktop/outputs/design-patterns-mapreduce/input/words_alpha.txt
 local.parameter_3 ?=
 # DistributedGrep = '<row [^>]*?/>'
 local.log = log

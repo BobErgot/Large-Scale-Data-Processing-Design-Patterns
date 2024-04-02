@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 public class MRDPUtils {
 	private static final Pattern INTEGER = Pattern.compile("\\d+");
-
+	public static final String[] REDIS_INSTANCES = { "p0", "p1", "p2", "p3", "p4", "p6" };
 	public static Map<String, String> transformXmlToMap(String xml) {
 		Map<String, String> map = new HashMap<String, String>();
 		try {
